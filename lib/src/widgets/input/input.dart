@@ -114,14 +114,14 @@ class _InputState extends State<Input> {
 
   void _handleSendPressed() {
     final trimmedText = _textController.text.trim();
-    if (trimmedText != '') {
-      final partialText = types.PartialText(text: trimmedText);
-      widget.onSendPressed(partialText);
+    // if (trimmedText != '') {
+    final partialText = types.PartialText(text: trimmedText);
+    widget.onSendPressed(partialText);
 
-      if (widget.options.inputClearMode == InputClearMode.always) {
-        _textController.clear();
-      }
+    if (widget.options.inputClearMode == InputClearMode.always) {
+      _textController.clear();
     }
+    // }
   }
 
   void _handleTextControllerChange() {
